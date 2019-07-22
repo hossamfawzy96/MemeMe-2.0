@@ -15,9 +15,7 @@ class SentMemeCollectionViewController: UIViewController, UICollectionViewDelega
     
     //MARK:- Variables
     var memes: [Meme]! {
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        return appDelegate.memes
+        return MemesSingelton.memes
     }
     
     //MARK:- CollectionView Functions

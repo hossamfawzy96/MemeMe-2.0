@@ -46,7 +46,6 @@ UINavigationControllerDelegate{
         setupTextFields(lowerTextField)
         cameraButton.isEnabled = UIImagePickerController.isSourceTypeAvailable(.camera)
         enableButtons(false)
-        subscribeToKeyboardNotifications()
         
         if(originalImage != nil){
             imagePickerView.image = originalImage
@@ -58,6 +57,7 @@ UINavigationControllerDelegate{
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        subscribeToKeyboardNotifications()
         
     }
     

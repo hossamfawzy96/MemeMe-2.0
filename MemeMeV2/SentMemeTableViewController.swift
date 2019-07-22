@@ -68,11 +68,10 @@ class SentMemeTableViewController: UIViewController, UITableViewDelegate, UITabl
     
     //MARK:- Functions
     func getMemesFromAppDelegate(_ index: Int = -1){
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         if(index != -1){
-            appDelegate.memes.remove(at:index)
+            MemesSingelton.memes.remove(at:index)
         }
-        self.memes = appDelegate.memes
+        self.memes = MemesSingelton.memes
         tableView.reloadData()
     }
 }

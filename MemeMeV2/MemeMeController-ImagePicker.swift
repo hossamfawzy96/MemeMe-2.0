@@ -33,11 +33,13 @@ extension MemeMeController{
     func setImagePickerController(_ album: Bool){
         let pickerController = UIImagePickerController()
         pickerController.delegate = self
-        pickerController.sourceType = .photoLibrary
         present(pickerController, animated: true, completion: nil)
         
         if(album){
+            pickerController.sourceType = .photoLibrary
             pickerController.allowsEditing = true
+        }else{
+            pickerController.sourceType = .camera
         }
     }
 }

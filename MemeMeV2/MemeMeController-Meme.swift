@@ -33,10 +33,8 @@ extension MemeMeController{
     func save(){
         let meme = Meme(topText: upperTextField.text!, bottomText: lowerTextField.text!, originalImage: imagePickerView.image!, memedImage: memedImage)
         
-        // Add it to the memes array in the Application Delegate
-        let object = UIApplication.shared.delegate
-        let appDelegate = object as! AppDelegate
-        appDelegate.memes.append(meme)
+        // Add it to the memes array in the MemesSingelton
+        MemesSingelton.memes.append(meme)
     }
     
 }
